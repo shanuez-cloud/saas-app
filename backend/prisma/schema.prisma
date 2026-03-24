@@ -20,7 +20,7 @@ model User {
   email      String   @unique
   password   String
   businessId String
-  business   Business @relation(fields: [businessId], references: [id])
+  business   Business? @relation(fields: [businessId], references: [id])
 }
 
 model Customer {
@@ -28,7 +28,7 @@ model Customer {
   name       String
   points     Int      @default(0)
   businessId String
-  business   Business @relation(fields: [businessId], references: [id])
+  business   Business? @relation(fields: [businessId], references: [id])
 }
 
 model Subscription {
